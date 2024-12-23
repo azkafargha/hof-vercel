@@ -5,7 +5,7 @@ const verifyJWT = (req, res, next) => {
   if (!token) return res.status(401).json({ message: "Unauthorized" });
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = decoded; // Tambahkan user ke req untuk penggunaan selanjutnya
     next();
   } catch (error) {
