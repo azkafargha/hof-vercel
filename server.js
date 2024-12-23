@@ -6,6 +6,7 @@ const http = require("http");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const matchRoutes = require("./routes/match");
+const port = 4000;
 
 // Create express app & use cors
 const app = express();
@@ -169,6 +170,7 @@ app.get("/leaderboard", (req, res) => {
   res.json(leaderboard);
 });
 
-server.listen(4000, () => {
-  console.log(`Server running on Port 4000`);
+
+server.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
